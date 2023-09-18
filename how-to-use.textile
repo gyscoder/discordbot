@@ -1,0 +1,46 @@
+''' código a parte, analisar dps
+    if (comando === "criarxyz") {
+        let [x, y, z, local] = argumentos;
+        if (isNaN(argumentos[0])) return message.reply('Modo de uso: ' + configuracao.prefixo + 'criarxyz X Y Z Nome_do_local, por favor use somente numeros em X Y Z');
+        if (isNaN(argumentos[1])) return message.reply('Modo de uso: ' + configuracao.prefixo + 'criarxyz X Y Z Nome_do_local, por favor use somente numeros em X Y Z');
+        if (isNaN(argumentos[2])) return message.reply('Modo de uso: ' + configuracao.prefixo + '!criarxyz X Y Z Nome_do_local, por favor use somente numeros em X Y Z');
+        if (!argumentos[3]) return message.reply('Modo de uso: ' + configuracao.prefixo + '!criarxyz X Y Z Nome_do_local');
+        const mongoose = require("mongoose");
+        const db = mongoose.connection;
+        message.channel.send(`foi registrado no banco de dados o local: ${local} X: ${x} Y: ${y} Z: ${z}`);
+        message.channel.send(`para atualizar as coordenadas de: ${local} é só repetir o mesmo procedimento sem alterar o local: ${local}`);
+    }
+    if (comando === "consultaxyz") {
+        let [local] = argumentos;
+        if (!argumentos[0]) return message.reply('Modo de uso: ' + configuracao.prefixo + 'consultaxyz "Nome_do_local"');
+    }
+'''
+
+//cliente.on("ready")
+// assim que o bot for iniciado ele mostra os dados
+// ${cliente.users.size} mostra quantos usuarios
+// ${cliente.chanels.size} mostra quantos canais
+// ${cliente.guilds.size} mostra quantas guilds
+
+//cliente.on("guildCreate")
+// assim que o bot for adicionado em algum servidor ele atualiza o status:
+// ${guild.name} nome do servidor
+// ${guild.id} id do servidor
+// ${guild.memberCount} população do servidor
+
+//cliente.on("guildDelete")
+// assim que o bot for removido de um servidor ele atualiza o status:
+
+//cliente.on("message")
+//daqui que iremos criar os comandos
+
+//comando !ping
+//mostra a latencia do bot e da api
+
+//comando !bnoite
+// dar um jeito de dependendo do horário desejar bom/boa dia/tarde/noite
+//Bom dia, pela manhã, antes do meio-dia; Boa tarde, após o meio-dia e antes das 18h; 
+//Boa noite, após às 18h e antes da meia-noite. Se bem que depois da meia-noite, quando ainda está escuro, é estranho dizer "bom dia".
+
+//loga o bot
+//cliente.login(configuracao.token);
